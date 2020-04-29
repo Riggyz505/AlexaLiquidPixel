@@ -1,0 +1,594 @@
+{
+    "endpointId": "YOUR_ID_HERE",
+    "manufacturerName": "Zeronik Customs",
+    "friendlyName": "LiquidPixel Light",
+    "description": "THE BASE VERSION OF THE JSON FOR EACH ENDPOINT, COPY THIS INTO INDEX.JS AND ADD YOUR ID",
+    "displayCategories": [
+        "LIGHT"
+    ],
+    "cookie": {
+        "temp": 7000,
+        "percent": 1,
+        "mode": 0
+    },
+    "capabilities": [{
+            "type": "AlexaInterface",
+            "interface": "Alexa.PowerController",
+            "version": "3",
+            "properties": {
+                "supported": [{
+                    "name": "powerState"
+                }],
+                "proactivelyReported": true,
+                "retrievable": true
+            }
+        },
+        {
+            "type": "AlexaInterface",
+            "interface": "Alexa.ColorController",
+            "version": "3",
+            "properties": {
+                "supported": [{
+                    "name": "color"
+                }],
+                "proactivelyReported": true,
+                "retrievable": true
+            }
+        },
+        {
+            "type": "AlexaInterface",
+            "interface": "Alexa.ColorTemperatureController",
+            "version": "3",
+            "properties": {
+                "supported": [{
+                    "name": "colorTemperatureInKelvin"
+                }],
+                "proactivelyReported": true,
+                "retrievable": true
+            }
+        },
+        {
+            "type": "AlexaInterface",
+            "interface": "Alexa.PercentageController",
+            "version": "3",
+            "properties": {
+                "supported": [{
+                    "name": "percentage"
+                }],
+                "proactivelyReported": true,
+                "retrievable": true
+            }
+        },
+        {
+            "type": "AlexaInterface",
+            "interface": "Alexa.ModeController",
+            "instance": "Light.LightMode",
+            "version": "3",
+            "properties": {
+                "supported": [{
+                    "name": "mode"
+                }],
+                "retrievable": true,
+                "proactivelyReported": true,
+                "nonControllable": false
+            },
+            "capabilityResources": {
+                "friendlyNames": [{
+                        "@type": "text",
+                        "value": {
+                            "text": "light mode",
+                            "locale": "en-US"
+                        }
+                    },
+                    {
+                        "@type": "text",
+                        "value": {
+                            "text": "light setting",
+                            "locale": "en-US"
+                        }
+                    },
+                    {
+                        "@type": "text",
+                        "value": {
+                            "text": "mode",
+                            "locale": "en-US"
+                        }
+                    },
+                    {
+                        "@type": "text",
+                        "value": {
+                            "text": "lighting mode",
+                            "locale": "en-US"
+                        }
+                    }
+                ]
+            },
+            "configuration": {
+                "ordered": true,
+                "supportedModes": [{
+                        "value": "LightMode.Cloudy",
+                        "modeResources": {
+                            "friendlyNames": [{
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "cloudy",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "random cloudy",
+                                        "locale": "en-US"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "value": "LightMode.Flash",
+                        "modeResources": {
+                            "friendlyNames": [{
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "flash",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "blink",
+                                        "locale": "en-US"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "value": "LightMode.Solid",
+                        "modeResources": {
+                            "friendlyNames": [{
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "solid",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "stable",
+                                        "locale": "en-US"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "value": "LightMode.Sweep",
+                        "modeResources": {
+                            "friendlyNames": [{
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "sweep",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "sweeping",
+                                        "locale": "en-US"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "value": "LightMode.Twinkle",
+                        "modeResources": {
+                            "friendlyNames": [{
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "twinkle",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "plain twinkle",
+                                        "locale": "en-US"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "value": "LightMode.RandomTwinkle",
+                        "modeResources": {
+                            "friendlyNames": [{
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "random twinkle",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "color twinkle",
+                                        "locale": "en-US"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "value": "LightMode.RandomFlash",
+                        "modeResources": {
+                            "friendlyNames": [{
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "random flash",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "colored flash",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "colored blink",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "random blink",
+                                        "locale": "en-US"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "value": "LightMode.TheaterChase",
+                        "modeResources": {
+                            "friendlyNames": [{
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "theater chase",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "chase",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "theater lights",
+                                        "locale": "en-US"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "value": "LightMode.Chroma",
+                        "modeResources": {
+                            "friendlyNames": [{
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "chroma",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "crazy",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "rainbow",
+                                        "locale": "en-US"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "value": "LightMode.FadeIn",
+                        "modeResources": {
+                            "friendlyNames": [{
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "fade in",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "start fade",
+                                        "locale": "en-US"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "value": "LightMode.FadeOut",
+                        "modeResources": {
+                            "friendlyNames": [{
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "fade out",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "end fade",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "fade to black",
+                                        "locale": "en-US"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "value": "LightMode.SuddenFlash",
+                        "modeResources": {
+                            "friendlyNames": [{
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "sudden flash",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "surprise",
+                                        "locale": "en-US"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "value": "LightMode.RandomBreath",
+                        "modeResources": {
+                            "friendlyNames": [{
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "random breath",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "colored breath",
+                                        "locale": "en-US"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "value": "LightMode.Breath",
+                        "modeResources": {
+                            "friendlyNames": [{
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "breath",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "simple breath",
+                                        "locale": "en-US"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "value": "LightMode.FallingStars",
+                        "modeResources": {
+                            "friendlyNames": [{
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "falling stars",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "shooting stars",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "meteor shower",
+                                        "locale": "en-US"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "value": "LightMode.ChristmasChase",
+                        "modeResources": {
+                            "friendlyNames": [{
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "christmas chase",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "present chase",
+                                        "locale": "en-US"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "value": "LightMode.Pong",
+                        "modeResources": {
+                            "friendlyNames": [{
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "pong",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "game",
+                                        "locale": "en-US"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "value": "LightMode.Waterfall",
+                        "modeResources": {
+                            "friendlyNames": [{
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "waterfall",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "wipe",
+                                        "locale": "en-US"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "value": "LightMode.Lightning",
+                        "modeResources": {
+                            "friendlyNames": [{
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "lightning",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "thunderstorm",
+                                        "locale": "en-US"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "value": "LightMode.Waves",
+                        "modeResources": {
+                            "friendlyNames": [{
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "waves",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "ocean waves",
+                                        "locale": "en-US"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "value": "LightMode.Levels",
+                        "modeResources": {
+                            "friendlyNames": [{
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "levels",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "height",
+                                        "locale": "en-US"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "value": "LightMode.Rain",
+                        "modeResources": {
+                            "friendlyNames": [{
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "rain",
+                                        "locale": "en-US"
+                                    }
+                                },
+                                {
+                                    "@type": "text",
+                                    "value": {
+                                        "text": "drizzle",
+                                        "locale": "en-US"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
